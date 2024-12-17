@@ -32,7 +32,7 @@ public class GenerateAst{
         writer.println();
         writer.println("abstract class " + baseName + " {");
 
-        defineVisitor(writer, baseNamne,types);
+        defineVisitor(writer, baseName,types);
         
         for(String type : types){
             String className = type.split(":")[0].trim();
