@@ -45,12 +45,6 @@ public class GenerateAst{
 
         writer.println("}");
 
-        writer.println();
-        writer.println("    @Override");
-        writer.println("    <R> R accept(Visitor<R> visitor) {");
-        writer.println("    return visitor.visit" + className + baseName + "(this);");
-        writer.println("    }");
-
         writer.close();
     }
 
@@ -82,6 +76,12 @@ public class GenerateAst{
             writer.println("    this." + name + " = " + name + ";");
         }
 
+        writer.println("    }");
+
+        writer.println();
+        writer.println("    @Override");
+        writer.println("    <R> R accept(Visitor<R> visitor) {");
+        writer.println("    return visitor.visit" + className + baseName + "(this);");
         writer.println("    }");
 
         writer.println();
